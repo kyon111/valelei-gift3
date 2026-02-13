@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubby</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #ffe6f2, #e6f7ff);
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%23ff69b4" opacity="0.1"/></svg>') repeat;
+            pointer-events: none;
+            z-index: -1;
+        }
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            color: #ff69b4;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+            animation: fadeIn 2s ease-in;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.5;
+            margin: 20px 0;
+            animation: fadeIn 2s ease-in 0.5s both;
+        }
+        .bub {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            animation: fadeIn 2s ease-in 1s both;
+        }
+        .bub img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+            border: 3px solid #ff69b4;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .bub img:hover {
+            transform: scale(1.05);
+        }
+        .video-bouquet {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin: 20px 0;
+            animation: fadeIn 2s ease-in 1.5s both;
+        }
+        .video-center {
+            max-width: 500px;
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .image-side {
+            max-width: 250px; /* Made bigger */
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transform: rotate(-15deg); /* Slant like bouquet */
+        }
+        .image-side.right {
+            transform: rotate(15deg); /* Opposite slant for right side */
+        }
+        button {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            animation: fadeIn 2s ease-in 2s both;
+        }
+        button:hover {
+            background-color: #ff1493;
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        #poem {
+            display: none;
+            margin-top: 20px;
+            font-style: italic;
+            color: #8b4513;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: slideDown 1s ease-out;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 0.8em;
+            color: #666;
+            animation: fadeIn 2s ease-in 2.5s both;
+        }
+        /* Floating hearts animation */
+        .heart {
+            position: absolute;
+            font-size: 2em;
+            color: #ff69b4;
+            animation: float 10s linear infinite;
+            pointer-events: none;
+        }
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating hearts -->
+    <div class="heart" style="left: 10%; animation-delay: 0s;">💖</div>
+    <div class="heart" style="left: 20%; animation-delay: 2s;">🌸</div>
+    <div class="heart" style="left: 30%; animation-delay: 4s;">💕</div>
+    <div class="heart" style="left: 40%; animation-delay: 6s;">🌺</div>
+    <div class="heart" style="left: 50%; animation-delay: 8s;">💖</div>
+    <div class="heart" style="left: 60%; animation-delay: 10s;">🌸</div>
+    <div class="heart" style="left: 70%; animation-delay: 12s;">💕</div>
+    <div class="heart" style="left: 80%; animation-delay: 14s;">🌺</div>
+    <div class="heart" style="left: 90%; animation-delay: 16s;">💖</div>
+
+    <<h1>🌸 A Special Gift For A Special Girl Like You, Bubbaby. 🌺</h1>
+    <p> Just something from me, to you. </p>
+    
+    <div class="bub">
+        <img src="https://i.imgur.com/IV4UFng.jpg" alt="HAPPY VALELEI BEI!">
+        <img src="https://i.imgur.com/iEhauXg.jpg" alt="I LOVE YOU SO MUCH">
+    </div>
+    
+    <!-- Video Bouquet Layout with Pictures on Sides -->
+    <div class="video-bouquet">
+        <img class="image-side" src="https://i.imgur.com/1EV4zHG.jpg" alt="Left Picture">
+        <video class="video-center" controls autoplay muted loop>
+            <source src="https://i.imgur.com/85YCn90.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <img class="image-side right" src="https://i.imgur.com/ke8Qorf.jpg" alt="Right Picture">
+    </div>
+    <p style="font-size: 0.9em; color: #666;">HAPPY VALENTINE'S DAY BEI 🩷 </p>
+    
+    <button onclick="showPoem()">CLICK HERE, BUB!</button>
+    
+    <div id="poem">
+        <p>Hi bei, Happy Valentine’s Day. Ito lang kaya ko sa ngayon na ibigay sayo also, it's my chance to make bawi to you. <br>
+	I know distance sucks, but I'll do everything to make you feel special. <br> 
+        I'm going to take this time to say how much i love you—God knows how much i love you. I'm asking Him to heal every part of you.<br>         
+        Gusto ko lang makita ka laging masaya, it makes me feel so comfortable. Pero sa totoo lang, gustong gusto na kita kasama T_T<br>         
+        umuwi ka na kasi edi sana ka-date n akita ngayon! Kidding aside gusto ko lang lagi sayo ipaalala bub, na you can always lean on<br>            
+        me when everything is too much, because i care—i genuinely do care. When the world feels heavy, i want you to know that you're <br>        
+        not alone. You always have me, bubba. your mental and emotional health matter more than anything. i appreciate you, and i am so <br>        
+        proud of everything you do. keep going, baby ko. sobra—you never fail to make me smile. thank you for giving me motivation to <br>        
+        continue living. ikaw ang pinakarason kung bakit gusto kong mabuhay at magpatuloy pa. thank you for making me strong, bubba. <br>        
+        i will love you every day, i will choose you every day, at pangakong hihintayin kita. I miss you tons! Tsaka masingit ko lang, <br>                    
+        <strong> Ikaw lang pinaka magandang babae na nakilala ko (｡•̀ᴗ-)✧. </strong> I love you so damn much, gorgeous!! 🌷</p>
+    </div>
+    
+   <footer>
+        - P.S.XOXO, Bunnyne.
+    </footer>
+
+    
+    <!-- Confetti library for surprise effect -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script>
+        function showPoem() {
+            const poem = document.getElementById('poem');
+            if (poem.style.display === 'none' || poem.style.display === '') {
+                poem.style.display = 'block';
+                // Trigger confetti when poem appears
+                confetti({
+                    particleCount: 100,
+                    spread: 70,
+                    origin: { y: 0.6 }
+                });
+            } else {
+                poem.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
