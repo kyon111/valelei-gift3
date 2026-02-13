@@ -67,20 +67,23 @@
             margin: 20px 0;
             animation: fadeIn 2s ease-in 1.5s both;
         }
-        .video-center {
+        .video-center video {
             max-width: 500px;
             width: 100%;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-        .image-side {
-            max-width: 250px; /* Made bigger */
+        .image-side img {
+            max-width: 250px; /* Default for right side */
             width: 100%;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transform: rotate(-15deg); /* Slant like bouquet */
         }
-        .image-side.right {
+        .image-side.left img {
+            max-width: 300px; /* Larger for left side */
+        }
+        .image-side.right img {
             transform: rotate(15deg); /* Opposite slant for right side */
         }
         button {
@@ -152,30 +155,37 @@
     <div class="heart" style="left: 80%; animation-delay: 14s;">🌺</div>
     <div class="heart" style="left: 90%; animation-delay: 16s;">💖</div>
 
-    <<h1>🌸 A Special Gift For A Special Girl Like You, Bubbaby. 🌺</h1>
+    <h1>🌸 A Special Gift For A Special Girl Like You, Bubbaby. 🌺</h1>
     <p> Just something from me, to you. </p>
     
     <div class="bub">
-        <img src="https://i.imgur.com/IV4UFng.jpg" alt="HAPPY VALELEI BEI!">
-        <img src="https://i.imgur.com/iEhauXg.jpg" alt="I LOVE YOU SO MUCH">
+        <img src="/images/bei.jpg.JPG" alt="HAPPY VALELEI BEI!">
+        <img src="/images/bubba.jpg" alt="I LOVE YOU SO MUCH">
     </div>
     
     <!-- Video Bouquet Layout with Pictures on Sides -->
     <div class="video-bouquet">
-        <img class="image-side" src="https://i.imgur.com/1EV4zHG.jpg" alt="Left Picture">
-        <video class="video-center" controls autoplay muted loop>
-            <source src="https://i.imgur.com/85YCn90.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <img class="image-side right" src="https://i.imgur.com/ke8Qorf.jpg" alt="Right Picture">
+        <div class="image-side left">
+            <img src="/images/e61e360f-e328-42b2-94bd-eb54e6961451.jpg" alt="Left Picture">
+        </div>
+        <div class="video-center">
+            <video controls muted loop>
+                <source src="/images/copy_32E2FE5E-5224-4B12-8A4F-9DDE21790F61.wmv" type="video/mp4"> <!-- Convert to MP4 and update name -->
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="image-side right">
+            <img src="/images/fe133cfe-ddfc-429e-8d00-563145851fbb.jpg" alt="Right Picture">
+        </div>
     </div>
-    <p style="font-size: 0.9em; color: #666;">HAPPY VALENTINE'S DAY BEI 🩷 </p>
-    
+    <strong><h3>
+        <p style="font-size: 0.9em; color: #666;">HAPPY VALENTINE'S DAY BEI 🩷 </p>
+    </strong></h3>    
     <button onclick="showPoem()">CLICK HERE, BUB!</button>
     
     <div id="poem">
         <p>Hi bei, Happy Valentine’s Day. Ito lang kaya ko sa ngayon na ibigay sayo also, it's my chance to make bawi to you. <br>
-	I know distance sucks, but I'll do everything to make you feel special. <br> 
+        I know distance sucks, but I'll do everything to make you feel special. <br> 
         I'm going to take this time to say how much i love you—God knows how much i love you. I'm asking Him to heal every part of you.<br>         
         Gusto ko lang makita ka laging masaya, it makes me feel so comfortable. Pero sa totoo lang, gustong gusto na kita kasama T_T<br>         
         umuwi ka na kasi edi sana ka-date n akita ngayon! Kidding aside gusto ko lang lagi sayo ipaalala bub, na you can always lean on<br>            
@@ -187,7 +197,7 @@
         <strong> Ikaw lang pinaka magandang babae na nakilala ko (｡•̀ᴗ-)✧. </strong> I love you so damn much, gorgeous!! 🌷</p>
     </div>
     
-   <footer>
+    <footer>
         - P.S.XOXO, Bunnyne.
     </footer>
 
